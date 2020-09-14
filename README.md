@@ -4,7 +4,7 @@ Unified method of getting `ImageData` instances in both the browser and Node.js,
 
 Also exports an `ImageData` polyfill in Node.js, allowing you to use `instanceof ImageData` to type check any returned data.
 
-[![Version](https://img.shields.io/npm/v/imagedata)](https://www.npmjs.com/package/imagedata) [![Total Downloads](https://img.shields.io/npm/dt/imagedata)](https://www.npmjs.com/package/imagedata) [![License](https://img.shields.io/npm/l/imagedata)](https://www.npmjs.com/package/imagedata)
+[![Version](https://img.shields.io/npm/v/andreekeberg/imagedata)](https://www.npmjs.com/package/imagedata) [![Total Downloads](https://img.shields.io/npm/dt/andreekeberg/imagedata)](https://www.npmjs.com/package/imagedata) [![License](https://img.shields.io/npm/l/andreekeberg/imagedata)](https://www.npmjs.com/package/imagedata)
 
 ## Supported formats
 
@@ -19,13 +19,13 @@ Also exports an `ImageData` polyfill in Node.js, allowing you to use `instanceof
 **Using npm**
 
 ```
-npm install imagedata
+npm install @andreekeberg/imagedata
 ```
 
 **Using yarn**
 
 ```
-yarn add imagedata
+yarn add @andreekeberg/imagedata
 ```
 
 ## Getting started
@@ -33,13 +33,13 @@ yarn add imagedata
 **Import as an ES6 module**
 
 ```javascript
-import { get, getSync } from 'imagedata'
+import { get, getSync } from '@andreekeberg/imagedata'
 ```
 
 **Import as a CommonJS module**
 
 ```javascript
-const { get, getSync } = require('imagedata')
+const { get, getSync } = require('@andreekeberg/imagedata')
 ```
 
 ## Usage
