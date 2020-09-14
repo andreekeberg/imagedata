@@ -4,7 +4,7 @@ Unified method of getting `ImageData` instances in both the browser and Node.js,
 
 Also exports an `ImageData` polyfill in Node.js, allowing you to use `instanceof ImageData` to type check any returned data.
 
-[![Version](https://img.shields.io/npm/v/andreekeberg/imagedata)](https://www.npmjs.com/package/imagedata) [![Total Downloads](https://img.shields.io/npm/dt/andreekeberg/imagedata)](https://www.npmjs.com/package/imagedata) [![License](https://img.shields.io/npm/l/andreekeberg/imagedata)](https://www.npmjs.com/package/imagedata)
+[![Version](https://img.shields.io/npm/v/andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata) [![Total Downloads](https://img.shields.io/npm/dt/andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata) [![License](https://img.shields.io/npm/l/andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata)
 
 ## Supported formats
 
