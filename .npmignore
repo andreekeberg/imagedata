@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Dependency directories
+node_modules
+jspm_packages
+
+# Editors
+.idea
+
+# Source directory
+src
+
+# Compiled version of browser.js
+lib/browser.js
+
+# npm package lock
+package-lock.json
+yarn.lock
+
+# Others
+.DS_Store
+Thumbs.db

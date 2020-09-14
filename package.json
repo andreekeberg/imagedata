@@ -1,0 +1,79 @@
+{
+    "name": "imagedata",
+    "version": "1.0.0",
+    "description": "Unified method of getting ImageData instances in both the browser and Node.js, either asynchronously or synchronously",
+    "main": "lib/node.js",
+    "module": "lib/node.js",
+    "browser": "lib/browser.js",
+    "scripts": {
+        "test": "mocha --require @babel/register --require @babel/core --recursive",
+        "lint": "eslint src test lib/node.js",
+        "build": "webpack --mode=production --no-progress --hide-modules --config=webpack.config.js",
+        "prepublish": "npm run lint && npm run test && npm run build"
+    },
+    "files": [
+        "lib",
+        "src"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andreekeberg/imagedata.git"
+    },
+    "keywords": [
+        "imagedata",
+        "image",
+        "data",
+        "canvas",
+        "getimagedata",
+        "drawimage",
+        "ctx",
+        "node",
+        "browser",
+        "polyfill",
+        "callback",
+        "asynchronous",
+        "asynchronously",
+        "synchronous",
+        "synchronously"
+    ],
+    "author": "André Ekeberg <hello@andreekeberg.se> (https://andreekeberg.se)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/andreekeberg/imagedata/issues"
+    },
+    "homepage": "https://github.com/andreekeberg/imagedata",
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/plugin-transform-modules-amd": "^7.10.5",
+        "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+        "@babel/plugin-transform-runtime": "^7.11.5",
+        "@babel/polyfill": "^7.11.5",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/register": "^7.11.5",
+        "@babel/runtime": "^7.11.2",
+        "@babel/runtime-corejs3": "^7.11.2",
+        "babel-cli": "^6.26.0",
+        "babel-eslint": "^10.1.0",
+        "babel-loader": "^8.1.0",
+        "babel-plugin-add-module-exports": "^1.0.4",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-minify": "^0.5.0",
+        "babel-runtime": "^6.26.0",
+        "chai": "^4.1.2",
+        "core-js": "^3.6.5",
+        "cross-env": "^5.2.1",
+        "eslint": "^5.16.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-node": "^11.1.0",
+        "mocha": "^6.1.3",
+        "rimraf": "^2.6.2",
+        "webpack": "^4.40.2",
+        "webpack-cli": "^3.3.9"
+    },
+    "dependencies": {
+        "@jorgeferrero/stream-to-buffer": "^1.0.0",
+        "jimp": "^0.16.1",
+        "mime-kind": "^3.0.0"
+    }
+}
