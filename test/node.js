@@ -4,6 +4,7 @@ import fs from 'fs'
 
 const imagePath = `${__dirname}/images/hotdog.jpg`
 const imageBuffer = fs.readFileSync(imagePath)
+const imageReadStream = fs.createReadStream(imagePath)
 
 describe('Node', () => {
     describe('ImageData', () => {
@@ -37,6 +38,42 @@ describe('Node', () => {
 
         it('should throw an error if callback is not a function', () => {
             expect(() => get('test.jpg', null)).to.throw(Error)
+        })
+
+        it('should call provided callback with an ImageData instance when given a path', () => {
+            get(imagePath, (error, data) => {
+                assert.instanceOf(data, ImageData)
+            })
+        })
+
+        it('should call provided callback with an ImageData instance when given a Buffer', () => {
+            get(imageBuffer, (error, data) => {
+                assert.instanceOf(data, ImageData)
+            })
+        })
+
+        it('should call provided callback with an ImageData instance when given a ReadStream', () => {
+            get(imageReadStream, (error, data) => {
+                assert.instanceOf(data, ImageData)
+            })
+        })
+
+        it('callback data should include the correct image width', () => {
+            get(imagePath, (error, data) => {
+                expect(data.width).to.equal(500)
+            })
+        })
+
+        it('callback data should include the correct image height', () => {
+            get(imagePath, (error, data) => {
+                expect(data.height).to.equal(333)
+            })
+        })
+
+        it('callback data should include a Uint8ClampedArray', () => {
+            get(imagePath, (error, data) => {
+                assert.instanceOf(data.data, Uint8ClampedArray)
+            })
         })
     })
 
