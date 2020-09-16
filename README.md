@@ -4,7 +4,7 @@
 
 Unified method of getting `ImageData` from an image in both the **browser** and **Node.js**, asynchronously or synchronously.
 
-Exports an `ImageData` class in **Node.js**, allowing you to use `instanceof ImageData` in both environments.
+Exports an `ImageData` polyfill in **Node.js**, allowing you to type check instances in both environments.
 
 ## Supported formats
 
