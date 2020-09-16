@@ -1,10 +1,10 @@
 # ImageData
 
-Unified method of getting `ImageData` from an image in both the browser and Node.js, either asynchronously or synchronously.
-
-Also exports an `ImageData` polyfill in Node.js, allowing you to use `instanceof ImageData` to type check any returned data.
-
 [![Version](https://img.shields.io/npm/v/@andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata) [![Total Downloads](https://img.shields.io/npm/dt/@andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata) [![License](https://img.shields.io/npm/l/@andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata)
+
+Unified method of getting `ImageData` from an image in both the **browser** and **Node.js**, asynchronously or synchronously.
+
+Exports an `ImageData` class in **Node.js**, allowing you to use `instanceof ImageData` in both environments.
 
 ## Supported formats
 
@@ -16,13 +16,13 @@ Also exports an `ImageData` polyfill in Node.js, allowing you to use `instanceof
 
 ## Installation
 
-**Using npm**
+### Using npm
 
 ```
 npm install @andreekeberg/imagedata
 ```
 
-**Using yarn**
+### Using yarn
 
 ```
 yarn add @andreekeberg/imagedata
@@ -30,25 +30,23 @@ yarn add @andreekeberg/imagedata
 
 ## Getting started
 
-**Import as an ES6 module**
+### Import as an ES6 module
 
 ```javascript
 import { get, getSync } from '@andreekeberg/imagedata'
 ```
 
-**Import as a CommonJS module**
+### Import as a CommonJS module
 
 ```javascript
 const { get, getSync } = require('@andreekeberg/imagedata')
 ```
 
-## Usage
+## Usage (Browser)
 
-### In the browser
+### Asynchronously
 
-#### Asynchronously
-
-**Available input types**
+#### Available input types
 
 |Type|Description|
 |----|-----------|
@@ -57,7 +55,7 @@ const { get, getSync } = require('@andreekeberg/imagedata')
 |`File`|Generally returned from an `<input>` element|
 |`Blob`|Raw binary data blob|
 
-**Example**
+#### Example
 
 ```javascript
 get('image.jpg', (error, data) => {
@@ -69,9 +67,9 @@ get('image.jpg', (error, data) => {
 })
 ```
 
-#### Synchronously
+### Synchronously
 
-**Available input types**
+#### Available input types
 
 |Type|Description|
 |----|-----------|
@@ -79,7 +77,7 @@ get('image.jpg', (error, data) => {
 
 > Throws an `Error` if the provided image has not completed loading.
  
-**Example**
+#### Example
 
 ```javascript
 const image = document.querySelector('img')
@@ -91,11 +89,11 @@ try {
 }
 ```
 
-### In Node.js
+## Usage (Node.js)
 
-#### Asynchronously
+### Asynchronously
 
-**Available input types**
+#### Available input types
 
 |Type|Description|
 |----|-----------|
@@ -103,7 +101,7 @@ try {
 |`Buffer`|Created from `fs.readFile` or `fs.readFileSync`|
 |`fs.ReadStream`|Created from `fs.createReadStream`|
 
-**Example**
+#### Example
 
 ```javascript
 get('image.jpg', (error, data) => {
@@ -115,16 +113,16 @@ get('image.jpg', (error, data) => {
 })
 ```
 
-#### Synchronously
+### Synchronously
 
-**Available input types**
+#### Available input types
 
 |Type|Description|
 |----|-----------|
 |`string`|Path to image file|
 |`Buffer`|Created from `fs.readFile` or `fs.readFileSync`|
 
-**Example**
+#### Example
 
 ```javascript
 try {
