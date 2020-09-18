@@ -2,9 +2,18 @@
 
 [![Version](https://img.shields.io/npm/v/@andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata) [![Total Downloads](https://img.shields.io/npm/dt/@andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata) [![License](https://img.shields.io/npm/l/@andreekeberg/imagedata)](https://www.npmjs.com/package/@andreekeberg/imagedata)
 
-Unified method of getting `ImageData` from an image in both the **browser** and **Node.js**, asynchronously or synchronously.
+Unified method of retrieving an [ImageData](https://developer.mozilla.org/en-US/docs/Web/API/ImageData) instance from an image, in both the **browser** and **Node.js**, asynchronously or synchronously. Also exports an `ImageData` polyfill in **Node.js**, allowing you to type check instances in both environments.
 
-Exports an `ImageData` polyfill in **Node.js**, allowing you to type check instances in both environments.
+An `ImageData` object always contains the following properties:
+
+<dl>
+	<dt><code>data</code></dt>
+	<dd><p>Uint8ClampedArray representing a one-dimensional array containing the data in the RGBA order, with integer values between 0 and 255 (inclusive).</p></dd>
+	<dt><code>width</code></dt>
+	<dd><p>Unsigned long representing the actual width, in pixels, of the ImageData.<p></dd>
+	<dt><code>height</code></dt>
+	<dd><p>Unsigned long representing the actual height, in pixels, of the ImageData.<p></dd>
+</dl>
 
 ## Supported formats
 
@@ -75,8 +84,8 @@ get('image.jpg', (error, data) => {
 |----|-----------|
 |`HTMLImageElement`|Reference to an `<img>` element|
 
-> Throws an `Error` if the provided image has not completed loading.
- 
+> Throws an `Error` if the provided image has not completed loading
+
 #### Example
 
 ```javascript
