@@ -3,7 +3,7 @@ import { get, getSync } from '../src/browser'
 
 describe('Browser', () => {
     describe('get', () => {
-        it('should throw an error if image is not a string, HTMLImageElement, File or Blob', () => {
+        it('should throw an error if data is not a string, HTMLImageElement, File or Blob', () => {
             expect(() => get({}, () => {})).to.throw(Error)
         })
 

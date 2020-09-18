@@ -32,7 +32,7 @@ describe('Node', () => {
     })
 
     describe('get', () => {
-        it('should throw an error if image is not a string, Buffer, or fs.ReadStream', () => {
+        it('should throw an error if data is not a string, Buffer, or fs.ReadStream', () => {
             expect(() => get({}, () => {})).to.throw(Error)
         })
 
@@ -40,19 +40,19 @@ describe('Node', () => {
             expect(() => get('test.jpg', null)).to.throw(Error)
         })
 
-        it('should call provided callback with an ImageData instance when given a path', () => {
+        it('should call the callback with an ImageData instance when given a path', () => {
             get(imagePath, (error, data) => {
                 assert.instanceOf(data, ImageData)
             })
         })
 
-        it('should call provided callback with an ImageData instance when given a Buffer', () => {
+        it('should call the callback with an ImageData instance when given a Buffer', () => {
             get(imageBuffer, (error, data) => {
                 assert.instanceOf(data, ImageData)
             })
         })
 
-        it('should call provided callback with an ImageData instance when given a ReadStream', () => {
+        it('should call the callback with an ImageData instance when given a ReadStream', () => {
             get(imageReadStream, (error, data) => {
                 assert.instanceOf(data, ImageData)
             })
@@ -78,7 +78,7 @@ describe('Node', () => {
     })
 
     describe('getSync', () => {
-        it('should throw an error if image is not a string or Buffer', () => {
+        it('should throw an error if data is not a string or Buffer', () => {
             expect(() => getSync([])).to.throw(Error)
         })
 
