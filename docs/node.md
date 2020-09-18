@@ -41,9 +41,9 @@ Create a new `ImageData` instance from an object literal
 **Throws**:
 
 - <code>Error</code> If the object argument is not an object literal
-- <code>Error</code> If the object argument is missing required data parameter
-- <code>Error</code> If the object argument is missing required width parameter
-- <code>Error</code> If the object argument is missing required height parameter
+- <code>Error</code> If the object argument is missing required property data
+- <code>Error</code> If the object argument is missing required property width
+- <code>Error</code> If the object argument is missing required property height
 
 | Param | Type |
 | --- | --- |
