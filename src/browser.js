@@ -3,6 +3,8 @@
  * 
  * @param {string} src
  * @param {function} callback
+ * @throws {Error} If the src argument is not a string
+ * @throws {Error} If the callback argument is not a function
  * @ignore
  */
 const loadImage = (src, callback) => {
@@ -29,7 +31,7 @@ const loadImage = (src, callback) => {
  * Returns an ImageData instance based on a provided image
  * 
  * @param {HTMLImageElement} image
- * @throws {Error}
+ * @throws {Error} If the image argument if not a HTMLImageElement
  * @return {ImageData}
  * @ignore
  */
@@ -52,33 +54,34 @@ const getImageData = image => {
 }
 
 /**
- * Asynchronously get an ImageData instance based on provided input
+ * Asynchronously get an ImageData instance based on provided data
  * 
- * @param {(string|HTMLImageElement|File|Blob)} image
+ * @param {(string|HTMLImageElement|File|Blob)} data
  * @param {function} callback
- * @throws {Error}
+ * @throws {Error} If the data argument is not a string, HTMLImageElement, File or Blob
+ * @throws {Error} If the callback argument is not a function
  */
-const get = (image, callback) => {
+const get = (data, callback) => {
     if (typeof callback !== 'function') {
         throw new Error('Argument callback must be a function')
     }
 
-    if (typeof image === 'string') {
-        loadImage(image, callback)
-    } else if (image instanceof HTMLImageElement) {
-        if (image.complete) {
-            callback(null, getImageData(image))
+    if (typeof data === 'string') {
+        loadImage(data, callback)
+    } else if (data instanceof HTMLImageElement) {
+        if (data.complete) {
+            callback(null, getImageData(data))
         } else {
-            image.onload = () => {
-                callback(null, getImageData(image))
+            data.onload = () => {
+                callback(null, getImageData(data))
             }
         }
     } else {
-        if (!(image instanceof File) && !(image instanceof Blob)) {
-            throw new Error('Argument image must be a string, HTMLImageElement, File or Blob')
+        if (!(data instanceof File) && !(data instanceof Blob)) {
+            throw new Error('Argument data must be a string, HTMLImageElement, File or Blob')
         }
 
-        const url = URL.createObjectURL(image)
+        const url = URL.createObjectURL(data)
 
         loadImage(url, (error, data) => {
             if (error) {
@@ -93,10 +96,11 @@ const get = (image, callback) => {
 }
 
 /**
- * Synchronously get an ImageData instance based on provided input
+ * Synchronously get an ImageData instance based on provided data
  *
  * @param {HTMLImageElement} image
- * @throws {Error}
+ * @throws {Error} If the image argument is not an HTMLImageElement
+ * @throws {Error} If the image has not completed loading
  * @returns {ImageData}
  */
 const getSync = image => {
