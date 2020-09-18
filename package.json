@@ -1,7 +1,7 @@
 {
     "name": "@andreekeberg/imagedata",
-    "version": "1.0.1",
-    "description": "Unified method of getting ImageData from an image in both the browser and Node.js, either asynchronously or synchronously",
+    "version": "1.0.2",
+    "description": "Unified method of retrieving an ImageData instance from an image, in both the browser and Node.js, asynchronously or synchronously",
     "main": "lib/node.js",
     "module": "lib/node.js",
     "browser": "lib/browser.js",
